@@ -81,7 +81,7 @@ bash install.sh
 
 它们共同点是:内核为 **mihomo(Clash Meta)** 或原生支持 mieru。
 
-**怎么把 yaml 文件弄到电脑上**:
+**下载yaml文件**:
 
 ```bash
 # 在你自己电脑上执行(不是 VPS 上)

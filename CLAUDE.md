@@ -8,7 +8,6 @@
 ## 内容
 
 - `install.sh` 的改动要在干净的 Debian / Ubuntu 上实测通过再推送；README 里的安装命令直接从 `main` 拉这个脚本。
-- 教程和脚本里不放任何机场、商业服务的推广或链接。
 
 ## 修改 CLAUDE.md
 

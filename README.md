@@ -2,6 +2,12 @@
 
 > **自己一个人**搭一条线路:一台 VPS、一个账号、一个客户端。
 
+搭建前，最好在 [ping.pe](https://ping.pe/) 查一下 IP 是否被墙，省得白忙。如果买到了已经被墙的 IP，可以联系 VPS 提供商更换。
+
+![ping.pe 测试结果示例](images/ping-pe.jpg)
+
+只看中国区的电信、联通、移动、阿里云：都是绿的就没问题。腾讯（Tencent）那几行常年显示 failed，跟 IP 是否被墙无关，不用管。
+
 [mieru](https://github.com/enfein/mieru) 是一个开源的代理协议,服务端叫 **mita**,特点是流量没有固定特征、不依赖 TLS 证书和域名,搭建很简单。
 
 整个过程大约 10 分钟:
@@ -95,7 +101,7 @@ scp root@你的VPS的IP:/root/mieru-client.yaml .
 | 3 | **客户端内核对不对** | 见上一节,换成 mihomo 内核的客户端 |
 | 4 | **两边时间准不准** | ☠️mieru 用时间做加密校验,**服务器或你的电脑/手机时间偏差超过 2 分钟,就会全部超时**(1~2 分钟时好时坏)。VPS 上 `timedatectl` 看 `System clock synchronized: yes`;手机/电脑打开「自动设置时间」 |
 | 5 | **用户名密码有没有抄错** | 重新 `bash install.sh --show` 对一遍,注意别多复制空格 |
-| 6 | **IP 是不是被封了** | 用 [itdog TCPing](https://www.itdog.cn/tcping/) 测 `你的IP:端口`:国内各地全红、而 VPS 上 `mita status` 正常,通常就是 IP 被墙了。换 IP(多数服务商可以付费换)或换机器 |
+| 6 | **IP 是不是被封了** | 在 [ping.pe](https://ping.pe/) 测 `你的IP:端口`（看法见开头）：电信、联通、移动、阿里云全红，而 VPS 上 `mita status` 正常，通常就是 IP 被墙了。联系 VPS 提供商换 IP（多数可以付费换），或者换机器 |
 
 **关于测延迟**:
 
